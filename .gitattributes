@@ -1,0 +1,2 @@
+# Never rewrite bytes: the hashes in SHA256SUMS.txt / BUILD-INFO.json and SOURCE-TREE.git-ls-tree.txt must hold on every OS (e.g. core.autocrlf=true on Windows).
+* -text

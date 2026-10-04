@@ -27,7 +27,7 @@ git(target, "checkout", "--detach", COMMIT);
 const head = git(target, "rev-parse", "HEAD");
 const tree = git(target, "rev-parse", `${COMMIT}:source`);
 const here = path.dirname(fileURLToPath(import.meta.url));
-const recorded = fs.readFileSync(path.join(here, "..", "SOURCE-TREE.git-ls-tree.txt"), "utf8").trim();
+const recorded = fs.readFileSync(path.join(here, "..", "SOURCE-TREE.git-ls-tree.txt"), "utf8").replace(//g, "").trim();
 const actual = git(target, "ls-tree", "-r", COMMIT, "source");
 
 const problems = [];
