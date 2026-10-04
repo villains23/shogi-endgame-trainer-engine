@@ -27,15 +27,11 @@ verifies its SHA-256 before use.
 
 ## License statement
 
-The archive carries no license file. The author stated the license of `nn.bin` on his bulletin board:
-
-- <http://www.yss-aya.com/bbs/patio.cgi?read=210&ukey=0>, post by 山下 dated 2026/09/27 14:55, replying to a
-  question about redistribution: "nn.binもGPLv3でお願いします。" (nn.bin: GPLv3, please.)
-- Saved copy of that page, SHA-256 `edc9e62ea1bdcbda0a8fa079f556a4bcf3186670d6ad5827e046785896e8a410`
-  (kept by the maintainer; reproduce it by saving the page above).
-
-This is the only license evidence for the file. A written confirmation or a license file in the official
-repository/release would be stronger (see `RELEASE-CHECKLIST.md`).
+The archive carries no license file. The author stated the license of `nn.bin` publicly, in reply to a direct
+question about whether the whole distribution including `nn.bin` is GPLv3
+(<http://www.yss-aya.com/bbs/patio.cgi?read=210&ukey=0>, question 2026/09/26 19:58, answer 2026/09/27 14:55:
+"はい。nn.binもGPLv3でお願いします。"). The question, answer, dates, posters, the saved page's SHA-256 and what the
+statement does and does not establish are recorded in **`LICENSE-PROVENANCE.md`**.
 
 ## How it was made (author's notes, `aobannue.txt`)
 

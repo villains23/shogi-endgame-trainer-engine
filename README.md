@@ -6,8 +6,14 @@ Corresponding Source and build information for the shogi engine that the web app
 このリポジトリは、アプリ「ひとり感想戦」が「ソフトで確認」機能のために配布している将棋ソフト
 (WebAssembly 版 YaneuraOu)の、**ソース・ビルド手順・ハッシュ・出所**をまとめたものです。
 
-> Status: prepared for publication. This is not legal advice and makes no claim of legal
-> compliance; it collects the materials needed to review that. See `RELEASE-CHECKLIST.md`.
+> This is not legal advice and makes no claim of legal compliance; it collects, in one place, the materials needed
+> to review that. See `RELEASE-CHECKLIST.md` for what is present and what is still open.
+
+## Relationship to the app
+
+"ひとり感想戦" is a web app for reviewing shogi positions. Its "ソフトで確認" feature runs the engine below in the
+user's browser (a Dedicated Worker, single thread) and loads the evaluation file from a version-fixed URL. This
+repository is not the app: it holds only what is needed to inspect, rebuild and verify the engine the app serves.
 
 ## What the app distributes
 
@@ -45,6 +51,17 @@ The build is bit-reproducible: on 2026-10-04 the build was repeated from a clean
 pinned commit, at a different path than the original build, and both output files were
 byte-identical to the shipped ones (`BUILD-INFO.json` → `reproduced`).
 
+## Releases / tags
+
+Each engine build the app serves has an immutable, annotated tag named exactly like its **build ID**
+(`yo-9.60.2-ff8b229-hkp768-g5a61066f` for the current one; the name encodes engine version, source commit,
+architecture and the first 8 hex digits of the glue's SHA-256). The app links to the tag, not to the branch head.
+A different binary or evaluation file always gets a new build ID and a new tag; existing tags are never moved.
+
+## License provenance of the model
+
+`LICENSE-PROVENANCE.md` records, with dates and posters, the author's public statement that `nn.bin` is GPL v3.
+
 ## Files
 
 | File | Purpose |
@@ -53,7 +70,8 @@ byte-identical to the shipped ones (`BUILD-INFO.json` → `reproduced`).
 | `NOTICES.md` | copyright notices transcribed from the source and the model's bundled notes |
 | `BUILD.md` | toolchain, exact steps and flags |
 | `MODIFICATIONS.md` | what differs from upstream (nothing in the source) |
-| `MODEL.md` | AobaNNUE provenance, size, hash, license statement |
+| `MODEL.md` | AobaNNUE provenance, size, hash |
+| `LICENSE-PROVENANCE.md` | the author's statement that `nn.bin` is GPL v3: where, when, in reply to what |
 | `BUILD-INFO.json` / `SHA256SUMS.txt` | machine-readable build record and hashes |
 | `SOURCE-TREE.git-ls-tree.txt` | git object ids of every file under `source/` at the pinned commit |
 | `scripts/` | `fetch-source.mjs`, `build-engine.mjs`, `verify.mjs` |
