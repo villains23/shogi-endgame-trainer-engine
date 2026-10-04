@@ -1,0 +1,5 @@
+5a61066f16cddda883b5fde0c13d5842328e189f0140ec31e0a0ce56ce8e0898 *dist/yo-9.60.2-ff8b229-hkp768-g5a61066f/yaneuraou.nnue768.js
+2c5b95c57c1e3a45f168e0a75519e2415c32a1afd4bb69f53a214aa764145aca *dist/yo-9.60.2-ff8b229-hkp768-g5a61066f/yaneuraou.nnue768.wasm
+0b383d5a63da644f628d99c33976ea6487ed89aaa59f0b3257992deac1171e6b *LICENSE
+f8ee839ae8c08537036f23345dd5ed0416958b22425476fc60177942903219b5  nn.bin (AobaNNUE v1.1, 192624720 bytes; NOT included in this repository)
+f531a2cffb0786f43317972ab0f477a2c7fd4cb05ce71df988721d54ce5a5b58 *source-archive/YaneuraOu-shielune-v9.60.2-ff8b229b.tar.gz

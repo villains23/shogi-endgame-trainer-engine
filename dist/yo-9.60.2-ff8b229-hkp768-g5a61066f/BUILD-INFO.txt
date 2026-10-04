@@ -1,0 +1,24 @@
+YaneuraOu (browser WASM, single-thread) build used by "ソフトで確認"
+====================================================================
+Machine-readable source of truth: src/lib/engine/runtime/engineBuilds.ts
+
+build id        : yo-9.60.2-ff8b229-hkp768-g5a61066f
+engine          : YaneuraOu (fork shielune/YaneuraOu), tag v9.60.2
+source          : https://github.com/shielune/YaneuraOu  commit ff8b229b2cffbdd4a2ded35509bf3a66ee2ff6a8
+upstream        : https://github.com/yaneurao/YaneuraOu
+license         : GPL-3.0 (see LICENSE-GPL-3.0.txt)
+edition         : YANEURAOU_ENGINE_NNUE_HALFKP_768X2_16_64 (no embedded eval; the evaluation file is loaded at runtime)
+toolchain       : emsdk 96c657fc60 / Emscripten 5.0.5
+build driver    : re-implementation of `make tournament COMPILER=em++ TARGET_CPU=WASM` (GNU make / Docker unavailable); flags copied from source/Makefile + script/wasm_build.js
+compile flags   : -std=c++17 -fno-exceptions -fno-rtti -fpermissive -O2 -DNDEBUG -DUSE_WASM_SIMD -msimd128 -DUSE_SSE42 -msse4.2 -s STRICT=1 -DNO_EXCEPTIONS -DYANEURAOU_ENGINE_NNUE -DYANEURAOU_ENGINE_NNUE_HALFKP_768X2_16_64 -DTARGET_CPU="WASM" -DFOR_TOURNAMENT -flto
+link flags      : -flto -lpthread -s MODULARIZE=1 -s EXPORT_NAME=YaneuraOu_HalfKP768_noeval -s EXPORT_ES6=1 -s ENVIRONMENT=web -s FILESYSTEM=1 -s EXIT_RUNTIME=0 -s EXPORTED_RUNTIME_METHODS=['FS','ccall'] -s ALLOW_MEMORY_GROWTH=1 -s INITIAL_MEMORY=268435456 -s MAXIMUM_MEMORY=2147483648 -s STACK_SIZE=67108864 --closure 0
+threads         : single-thread (EM_PTHREAD=0); needs no COOP/COEP
+requires        : WebAssembly SIMD
+
+yaneuraou.nnue768.js    sha256 5a61066f16cddda883b5fde0c13d5842328e189f0140ec31e0a0ce56ce8e0898  63615 bytes
+yaneuraou.nnue768.wasm  sha256 2c5b95c57c1e3a45f168e0a75519e2415c32a1afd4bb69f53a214aa764145aca  840910 bytes
+LICENSE-GPL-3.0.txt     sha256 0b383d5a63da644f628d99c33976ea6487ed89aaa59f0b3257992deac1171e6b  35821 bytes
+
+Evaluation function (NOT stored in this repository): AobaNNUE v1.1, nn.bin 192,624,720 bytes,
+sha256 f8ee839ae8c08537036f23345dd5ed0416958b22425476fc60177942903219b5, architecture HalfKP_768x2_16_64.
+Distributed separately (versioned URL); verified by SHA-256 before use.
